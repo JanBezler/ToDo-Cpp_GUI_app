@@ -1,4 +1,10 @@
-#include "MyForm.h"
+#include "MainForm.h"
+//#include "Event.h"
+//#include "Reminder.h"
+//#include "RepeatingReminder.h"
+//#include "Appointment.h"
+
+
 using namespace System;
 using namespace System::Windows::Forms;
 
@@ -7,6 +13,6 @@ void Main(array<String^>^ args)
 {
 	Application::EnableVisualStyles;
 	Application::SetCompatibleTextRenderingDefault(false);
-	ToDoCppGUIapp::MyForm form;
+	ToDoCppGUIapp::MainForm form;
 	Application::Run(% form);
 }
