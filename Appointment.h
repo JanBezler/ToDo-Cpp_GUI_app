@@ -22,7 +22,7 @@ public:
 
     virtual String^ GiveDateTime() override
     {
-        return (DateAndTime->ToString());
+        return ((DateAndTime->Month).ToString() + "/" + (DateAndTime->Day).ToString() + "/" + (DateAndTime->Year).ToString() + " " + (DateAndTime->TimeOfDay).ToString());
     }
 
     virtual String^ GiveTitle() override
