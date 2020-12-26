@@ -6,27 +6,30 @@ ref class Reminder :
     public Event
 { 
 public:
-    Reminder(int minute, int hour, int day, int month, int year)
+    Reminder(DateTime^ datetime, String^ title, String^ description)
     {
-        Minute = minute;
-        Hour = hour;
-        Day = day;
-        Month = month;
-        Year = year;
+        DateAndTime = datetime;
+        Title = title;
+        Description = description;
     }
 
     ~Reminder()
     {
     }
 
-    virtual String^ GiveTime() override
+    virtual String^ GiveDateTime() override
     {
-        return (Hour.ToString() + ":" + Minute.ToString());
+        return (DateAndTime->ToString());
     }
 
-    virtual String^ GiveDate() override
+    virtual String^ GiveTitle() override
     {
-        return (Day.ToString() + "." + Month.ToString() + "." + Year.ToString());
+        return ("R:" + Title);
+    }
+
+    virtual String^ GiveDescription() override
+    {
+        return (Description);
     }
 };
 

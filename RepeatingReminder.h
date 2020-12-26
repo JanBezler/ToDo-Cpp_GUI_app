@@ -6,26 +6,24 @@ ref class RepeatingReminder :
     public Reminder
 {
 private:
-    int Repeat;
+    String^ Repeat;
 public:
-    RepeatingReminder(int minute, int hour, int day, int month, int year, int repeat) :
-        Reminder(minute, hour, day, month, year)
+    RepeatingReminder(DateTime^ datetime, String^ repeat, String^ title, String^ description) :
+        Reminder(datetime, title, description)
     {
-        Minute = minute;
-        Hour = hour;
-        Day = day;
-        Month = month;
-        Year = year;
+        DateAndTime = datetime;
         Repeat = repeat;
+        Title = title;
+        Description = description;
     }
 
     ~RepeatingReminder()
     {
     }
 
-    virtual String^ GiveRepeat()
+    virtual String^ GiveDateTime() override
     {
-        return ("Repeating every " + Repeat.ToString() + " days");
+        return (Repeat + " " + DateAndTime->TimeOfDay);
     }
 
 };

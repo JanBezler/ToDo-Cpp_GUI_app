@@ -8,34 +8,34 @@ ref class Appointment :
 private:
     int Duration;
 public:
-    Appointment(int minute, int hour, int day, int month, int year, int duration)
+    Appointment(DateTime^ datetime, int duration, String^ title, String^ description)
     {
-        Minute = minute;
-        Hour = hour;
-        Day = day;
-        Month = month;
-        Year = year;
+        DateAndTime = datetime;
         Duration = duration;
+        Title = title;
+        Description = description;
     }
 
     ~Appointment()
     {
     }
 
-    virtual String^ GiveDuration()
+    virtual String^ GiveDateTime() override
     {
-        if (Duration < 60) return (Duration.ToString() + " min");
-        else return (static_cast<int>((Duration / 60)).ToString() + " min and " + (Duration % 60).ToString() + " hr");
+        return (DateAndTime->ToString());
     }
 
-    virtual String^ GiveTime() override
+    virtual String^ GiveTitle() override
     {
-        return (Hour.ToString() + ":" + Minute.ToString());
+        return ("A:" + Title);
     }
 
-    virtual String^ GiveDate() override
+    virtual String^ GiveDescription() override
     {
-        return (Day.ToString() + "." + Month.ToString() + "." + Year.ToString());
+        DateTime^ DateAndTimeWithDuration = DateAndTime->AddMinutes(Duration);
+        return ("Ends at " + (DateAndTimeWithDuration->TimeOfDay).ToString() + " - " + Description);
     }
+
+
 };
 
