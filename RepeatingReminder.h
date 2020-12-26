@@ -23,8 +23,9 @@ public:
 
     virtual String^ GiveDateTime() override
     {
-        return (Repeat + " " + DateAndTime->TimeOfDay);
+        return (Repeat + ", " + (DateAndTime->TimeOfDay).ToString());
     }
+
 
 };
 

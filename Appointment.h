@@ -20,14 +20,15 @@ public:
     {
     }
 
+
     virtual String^ GiveDateTime() override
     {
-        return ((DateAndTime->Month).ToString() + "/" + (DateAndTime->Day).ToString() + "/" + (DateAndTime->Year).ToString() + " " + (DateAndTime->TimeOfDay).ToString());
+        return (DateAndTime->Month + "/" + DateAndTime->Day + "/" + DateAndTime->Year + ", " + DateAndTime->TimeOfDay);
     }
 
     virtual String^ GiveTitle() override
     {
-        return ("A:" + Title);
+        return ("A: " + Title + " - ");
     }
 
     virtual String^ GiveDescription() override

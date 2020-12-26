@@ -133,6 +133,9 @@
     <ClInclude Include="RepeatingReminder.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MainForm.pl.resx">
+      <DependentUpon>MainForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.h</DependentUpon>
     </EmbeddedResource>
