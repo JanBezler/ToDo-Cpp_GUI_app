@@ -14,6 +14,9 @@ public:
 	virtual String^ GiveDateTime() = 0;
 	virtual String^ GiveTitle() = 0;
 	virtual String^ GiveDescription() = 0;
+	virtual String^ GiveOutputToFile() = 0;
+	virtual DateTime^ GiveDateTimeAsDateTime() = 0;
+	virtual String^ GiveRepeat() = 0;
 	
 	String^ operator+(int x) {
 
@@ -24,7 +27,8 @@ public:
 
 		return this->ToString() + x;
 	}
-
 };
+
+
 
 

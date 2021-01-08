@@ -26,6 +26,22 @@ public:
         return (Repeat + ", " + (DateAndTime->TimeOfDay).ToString());
     }
 
+    virtual String^ GiveOutputToFile() override
+    {
+        return(
+            Title + "\n" +
+            Description + "\n" +
+            "\n" +
+            "\n" +
+            Repeat + "\n" +
+            DateAndTime->TimeOfDay + "\n"
+            );
+    }
+
+    String^ GiveRepeat() override
+    {
+        return Repeat;
+    }
 
 };
 

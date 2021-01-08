@@ -24,12 +24,34 @@ public:
 
     virtual String^ GiveTitle() override
     {
-        return ("R: " + Title + " - ");
+        return ("R: " + Title);
     }
 
     virtual String^ GiveDescription() override
     {
         return (Description);
+    }
+
+    virtual String^ GiveOutputToFile() override
+    {
+        return(
+            Title + "\n" +
+            Description + "\n" +
+            "\n" +
+            DateAndTime->Month + "/" + DateAndTime->Day + "/" + DateAndTime->Year + "\n" + 
+            "\n" +
+            DateAndTime->TimeOfDay + "\n"
+            );
+    }
+
+    virtual DateTime^ GiveDateTimeAsDateTime() override
+    {
+        return DateAndTime;
+    }
+
+    String^ GiveRepeat() override
+    {
+        return "NULL";
     }
 };
 

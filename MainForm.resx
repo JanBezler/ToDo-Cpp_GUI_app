@@ -589,7 +589,7 @@
     <value>262, 4</value>
   </data>
   <data name="listEvents.Size" type="System.Drawing.Size, System.Drawing">
-    <value>537, 459</value>
+    <value>393, 459</value>
   </data>
   <data name="listEvents.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -610,7 +610,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="buttonClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>672, 469</value>
+    <value>528, 469</value>
   </data>
   <data name="buttonClear.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 35</value>
@@ -633,14 +633,23 @@
   <data name="&gt;&gt;buttonClear.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>803, 509</value>
+    <value>659, 509</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ToDo</value>
+  </data>
+  <data name="&gt;&gt;timer.Name" xml:space="preserve">
+    <value>timer</value>
+  </data>
+  <data name="&gt;&gt;timer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
