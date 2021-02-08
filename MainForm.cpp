@@ -43,31 +43,6 @@ void ToDoCppGUIapp::MainForm::SaveEventToFile(Event^ ie)
 	fout.close();
 }
 
-void ToDoCppGUIapp::MainForm::ReloadEvents()
-{
-
-	ofstream fout("events_data.txt", std::ofstream::trunc);
-
-	string output;
-
-	listEvents->Items->Clear();
-
-	for each (Event^ e in EventsList)
-	{
-		AddItemToListEvents(e);
-		MarshalString(e->GiveOutputToFile(), output);
-		fout << output;
-	}
-	
-	fout.close();
-
-}
-
-void ToDoCppGUIapp::MainForm::AddItemToListEvents(Event^ e)
-{
-	listEvents->Items->Add(e->GiveDateTime() + "   " + e->GiveTitle());
-}
-
 
 void ToDoCppGUIapp::MainForm::ReadEventFromFile()
 {
@@ -158,4 +133,31 @@ void ToDoCppGUIapp::MainForm::ClearEventsInFile()
 {
 	ofstream fcls("events_data.txt", std::ofstream::trunc);
 	fcls.close();
+}
+
+
+void ToDoCppGUIapp::MainForm::ReloadEvents()
+{
+
+	ofstream fout("events_data.txt", std::ofstream::trunc);
+
+	string output;
+
+	listEvents->Items->Clear();
+
+	for each (Event ^ e in EventsList)
+	{
+		AddItemToListEvents(e);
+		MarshalString(e->GiveOutputToFile(), output);
+		fout << output;
+	}
+
+	fout.close();
+
+}
+
+
+void ToDoCppGUIapp::MainForm::AddItemToListEvents(Event^ e)
+{
+	listEvents->Items->Add(e->GiveDateTime() + "   " + e->GiveTitle());
 }
